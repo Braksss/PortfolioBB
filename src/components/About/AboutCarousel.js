@@ -10,49 +10,43 @@ const NexabridgeCollapse = () => {
 
   const sections = [
     {
-      title: 'Mon Parcours Professionnel',
+      title: 'Mon Parcours',
       content: (
         <>
-          Ancien joueur de <span className="highlight">golf professionnel</span>, j'ai décidé après ma carrière de me reconvertir à 100% dans le <span className="important">développement web</span>. Depuis la fin de ma carrière sportive, je me consacre pleinement à la création d'applications modernes, en utilisant les technologies front-end et back-end pour répondre aux besoins des entreprises.
-        </>
+        Avec une expérience approfondie dans le domaine de l'assistance technique et audiovisuelle, je combine cette expérience avec mon activité de <span className="important">développeur web freelance</span>. Mon parcours m'a permis de maîtriser la gestion de l'assistance technique et le développement de solutions web modernes. Je mets à profit mes compétences pour concevoir des applications adaptées aux besoins spécifiques des entreprises.
+      </>
       )
     },
     {
       title: 'Mes Services',
       content: (
         <>
-          Je propose :
+          Je propose des services sur mesure :
           <ul>
             <li>Développement front-end avec <span className="highlight">React</span></li>
-            <li>Développement back-end avec <span className="highlight">Node.js</span> et <span className="highlight">MongoDB</span></li>
-            <li>Gestion de projets IT, de la conception à la mise en production</li>
-            <li>Accompagnement pour la <span className="important">transformation digitale</span> des entreprises</li>
+            <li>Développement back-end en utilisant <span className="highlight">Node.js</span> et <span className="highlight">MongoDB</span></li>
+            <li>Gestion complète de projets IT, de la conception à la mise en production</li>
+            <li>Accompagnement des entreprises dans leur <span className="important">transformation digitale</span></li>
           </ul>
         </>
       )
     },
     {
-      title: 'Mes Compétences Techniques',
+      title: 'Mes Compétences',
       content: (
         <>
-          J'ai développé des compétences solides en :
+          J'ai acquis une expertise solide dans plusieurs domaines :
           <ul>
-            <li><span className="highlight">React</span>, HTML, CSS, JavaScript</li>
-            <li><span className="highlight">Node.js</span>, Express</li>
-            <li>Gestion de bases de données et sécurisation des applications web</li>
+            <li><span className="highlight">Hardware</span> et support technique informatique</li>
+            <li>Développement web avec <span className="highlight">PHP</span>, <span className="highlight">JavaScript</span>, <span className="highlight">React</span>, HTML, et CSS</li>
+            <li>Programmation back-end avec <span className="highlight">Node.js</span> et Express</li>
+            <li>Gestion et sécurisation des bases de données</li>
           </ul>
-        </>
-      )
-    },
-    {
-      title: 'Reconversion après le Golf',
-      content: (
-        <>
-          Après ma carrière de <span className="highlight">golf professionnel</span>, je me suis lancé à fond dans le <span className="important">développement web</span>. Cette reconversion m'a permis de combiner ma rigueur sportive avec la gestion de projets complexes.
         </>
       )
     }
   ];
+
   return (
     <div className="nexabridge-collapse">
       {sections.map((section, index) => (

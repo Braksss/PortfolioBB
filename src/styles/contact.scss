@@ -1,9 +1,37 @@
 .contact-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
-    gap: 20px; /* Espacement entre les colonnes */
-    max-width: 1200px;
-    margin: 0 auto; /* Centre la section */
-    margin-top: 10%;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
+  gap: 20px; /* Espacement entre les colonnes */
+  max-width: 1200px;
+  margin: 0 auto; /* Centre la section */
+  margin-top: 10%;
+  padding: 20px;
+
+  @media (max-width: 1024px) {
+      grid-template-columns: 1fr; /* Passe à une seule colonne */
+      grid-template-rows: auto; /* Les lignes prennent la taille de leur contenu */
+
+      > .contact-img {
+          grid-row: 1; /* Place l'image en premier */
+      }
+
+      > .contact-form {
+          grid-row: 2; /* Place le formulaire en second */
+      }
   }
+
+  @media (max-width: 768px) {
+      grid-template-columns: 1fr; /* Toujours une seule colonne en version mobile */
+      grid-template-rows: auto;
+      gap: 15px;
+
+      > .contact-img {
+          grid-row: 1; /* L'image reste en haut */
+          width: 100%; /* Ajuste l'image pour qu'elle prenne toute la largeur */
+      }
+
+      > .contact-form {
+          grid-row: 2; /* Le formulaire est en dessous de l'image */
+      }
+  }
+}

@@ -38,3 +38,47 @@
       }
     }
   }
+
+  /* Media Queries */
+@media (max-width: 1024px) {
+  .filter-bar__buttons {
+    gap: 10px; /* Réduction de l'espace entre les boutons pour les écrans moyens */
+  }
+
+  .filter-bar__button {
+    font-size: 0.9rem; /* Taille de la police réduite */
+    padding: 8px; /* Ajustement du padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-bar {
+    margin-bottom: 15px;
+
+    &__buttons {
+      flex-wrap: wrap;
+      gap: 8px; /* Espace plus petit pour les tablettes */
+    }
+
+    .filter-bar__button {
+      font-size: 0.85rem; /* Réduction de la taille de la police */
+      padding: 6px; /* Padding ajusté pour les tablettes */
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-bar {
+    margin-bottom: 10px;
+
+    &__buttons {
+      flex-direction: column;
+      gap: 5px; /* Alignement vertical et réduction de l'espace pour les mobiles */
+    }
+
+    .filter-bar__button {
+      font-size: 0.8rem; /* Taille de la police réduite pour les mobiles */
+      padding: 5px; /* Padding réduit pour s'adapter aux écrans plus petits */
+    }
+  }
+}

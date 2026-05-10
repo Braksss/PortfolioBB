@@ -1,57 +1,74 @@
 .home-grid {
-    display: grid;
-    grid-template-columns: repeat(25, 1fr); // 25 colonnes égales
-    grid-template-rows: repeat(13, 1fr); // 13 lignes égales
-    grid-gap: 20px; // Espace entre les éléments de la grille
-    width: 100%;
-    margin: 0 auto; // Centrer la grille
+  display: grid;
+  grid-template-columns: repeat(25, 1fr); // 25 colonnes égales
+  grid-template-rows: repeat(13, 1fr); // 13 lignes égales
+  grid-gap: 20px; // Espace entre les éléments de la grille
+  width: 100%;
+  margin: 0 auto; // Centrer la grille
 }
 
 .principal-card {
-    grid-column: 1 / 14; // La carte principale prend maintenant 13 colonnes (1 à 14)
-    grid-row: 1 / 13; // Elle occupe toujours toute la hauteur (lignes 1 à 13)
+  grid-column: 1 / 14; // La carte principale prend maintenant 13 colonnes (1 à 14)
+  grid-row: 1 / 13; // Elle occupe toute la hauteur (lignes 1 à 13)
 }
 
 .top-card {
-    grid-column: 14 / 26; // Prend les colonnes 14 à 25 (11 colonnes pour TopCard)
-    grid-row: 1 / 7; // Occupe la moitié supérieure de la grille (lignes 1 à 7)
+  grid-column: 14 / 26; // Prend les colonnes 14 à 25 (11 colonnes pour TopCard)
+  grid-row: 1 / 7; // Occupe la moitié supérieure de la grille (lignes 1 à 7)
 }
 
 .bottom-card1 {
-    grid-column: 14 / 20; // Prend 6 colonnes (colonnes 14 à 20)
-    grid-row: 7 / 13; // Occupe la moitié inférieure (lignes 7 à 13)
+  grid-column: 14 / 20; // Prend 6 colonnes (colonnes 14 à 20)
+  grid-row: 7 / 13; // Occupe la moitié inférieure (lignes 7 à 13)
 }
 
 .bottom-card2 {
-    grid-column: 20 / 26; // Prend 6 colonnes (colonnes 20 à 25)
-    grid-row: 7 / 13; // Occupe la moitié inférieure (lignes 7 à 13)
+  grid-column: 20 / 26; // Prend 6 colonnes (colonnes 20 à 25)
+  grid-row: 7 / 13; // Occupe la moitié inférieure (lignes 7 à 13)
 }
 
-/* Nouvelle grille pour mobile uniquement */
+/* Media Queries pour une mise en page proportionnelle */
+@media (max-width: 1024px) {
+.home-grid {
+  grid-template-columns: repeat(12, 1fr); // Ajustement à 12 colonnes
+  grid-template-rows: auto;
+  grid-gap: 15px; // Espacement réduit
+}
+
+.principal-card {
+  grid-column: 1 / -1; // Prend toute la largeur
+  grid-row: span 2; // Occupe deux lignes
+}
+
+.top-card {
+  grid-column: 1 / -1; // Prend toute la largeur
+  grid-row: span 1; // Occupe une ligne
+}
+
+.bottom-card1 {
+  grid-column: 1 / 7; // Prend la moitié de la largeur
+  grid-row: span 1;
+}
+
+.bottom-card2 {
+  grid-column: 7 / -1; // Prend la seconde moitié
+  grid-row: span 1;
+}
+}
+
 @media (max-width: 768px) {
-  .home-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); // 2 colonnes
-    grid-template-rows: repeat(3, 1fr); // 3 lignes pour la grille mobile
-    grid-gap: 10px; // Ajuste l'espacement pour mobile
-    width: 100%;
-    height: 100vh; // Prend toute la hauteur de l'écran
-    margin: auto;
-  }
+.home-grid {
+  grid-template-columns: 1fr; // Une seule colonne
+  grid-template-rows: auto; // Lignes automatiques
+  grid-gap: 10px; // Espacement réduit
+  width: 100%;
+  margin: 0 auto;
+}
 
-  .principal-card, .top-card {
-    grid-column: 1 / -1; // Prend toute la largeur (les 2 colonnes)
-    grid-row: span 1; // Occupe une ligne complète
-    width: 100%;
-    height: 100%; // Prend toute la hauteur de la cellule
-    margin: 0;
-  }
-
-  .bottom-card1, .bottom-card2 {
-    grid-column: span 1; // Occupe une colonne (1 sur 2)
-    grid-row: span 1; // Chaque carte occupe une ligne
-    width: 100%; // Prend toute la largeur de la cellule
-    height: 100%; // Prend toute la hauteur de la cellule
-    margin: 0;
-  }
+.principal-card, .top-card, .bottom-card1, .bottom-card2 {
+  grid-column: 1 / -1; // Prend toute la largeur
+  grid-row: auto; // Taille automatique
+  width: 100%;
+  margin: 0;
+}
 }

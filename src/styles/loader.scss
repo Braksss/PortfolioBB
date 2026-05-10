@@ -1,77 +1,73 @@
 .loader {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Hauteur pleine page */
-    background-color: #F5F5F5; /* Couleur de fond légère */
-    animation: fadeIn 1s ease-in-out; /* Animation fade-in pour tout le loader */
-    
-    &__logo {
-      width: 230px;
-      height: auto;
-      opacity: 0;
-      animation: fadeInLogo 1.5s ease-in-out forwards; /* Apparition progressive du logo */
-      margin-bottom: 20px; /* Espacement sous le logo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+
+  /* Spinner minimal */
+  &__spinner {
+    border: 3px solid rgba(255, 130, 0, 0.2); /* Couleur subtile avec opacité */
+    border-top: 3px solid #FF8200; /* Couleur de ta marque */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+  }
+
+  &__role {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #FF8200;
+    margin-top: 10px;
+  }
+
+  /* Animation de rotation pour le spinner */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
     }
-  
-    &__text {
-      display: flex;
-      gap: 5px; /* Espacement entre chaque lettre */
-    }
-  
-    &__letter {
-      font-size: 48px;
-      font-weight: 700;
-      color: #FF8200; /* Couleur orange */
-      opacity: 0;
-      transform: translateY(20px); /* Les lettres commencent par être légèrement en dessous */
-      animation: fadeInLetter 0.5s forwards;
-    }
-  
-    /* Animation fade-in pour chaque lettre */
-    @keyframes fadeInLetter {
-      0% {
-        opacity: 0;
-        transform: translateY(20px); /* Les lettres commencent en bas */
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0); /* Les lettres montent à leur position normale */
-      }
-    }
-  
-    /* On applique un délai sur chaque lettre pour qu'elles apparaissent une par une */
-    .loader__letter:nth-child(1) { animation-delay: 0.2s; }
-    .loader__letter:nth-child(2) { animation-delay: 0.4s; }
-    .loader__letter:nth-child(3) { animation-delay: 0.6s; }
-    .loader__letter:nth-child(4) { animation-delay: 0.8s; }
-    .loader__letter:nth-child(5) { animation-delay: 1s; }
-    .loader__letter:nth-child(6) { animation-delay: 1.2s; }
-    .loader__letter:nth-child(7) { animation-delay: 1.4s; }
-    .loader__letter:nth-child(8) { animation-delay: 1.6s; }
-    .loader__letter:nth-child(9) { animation-delay: 1.8s; }
-    .loader__letter:nth-child(10) { animation-delay: 2s; }
-  
-    /* Animation fade-in pour le loader */
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-  
-    /* Animation fade-in pour le logo */
-    @keyframes fadeInLogo {
-      0% {
-        opacity: 0;
-        transform: scale(0.9); /* Le logo commence légèrement plus petit */
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1); /* Le logo atteint sa taille normale */
-      }
+    100% {
+      transform: rotate(360deg);
     }
   }
+
+  /* Animation fade-in pour le texte */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .loader__name {
+    font-size: 1.5rem;
+  }
+
+  .loader__role {
+    font-size: 1.2rem;
+  }
+}

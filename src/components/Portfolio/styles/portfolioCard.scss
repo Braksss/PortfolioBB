@@ -40,3 +40,69 @@
     }
   }
 }
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .portfolio-card {
+    img {
+      height: 180px; /* Ajuste la hauteur pour les écrans moyens */
+    }
+
+    .portfolio-card-body {
+      padding: 15px;
+
+      h4 {
+        font-size: 1.3rem; /* Réduit la taille de la police du titre */
+      }
+
+      p {
+        font-size: 0.9rem; /* Réduit la taille de la police du contenu */
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-card {
+    img {
+      height: 150px; /* Hauteur réduite pour les tablettes */
+    }
+
+    .portfolio-card-body {
+      padding: 10px;
+
+      h4 {
+        font-size: 1.1rem; /* Taille de la police réduite pour les tablettes */
+      }
+
+      p {
+        font-size: 0.85rem; /* Ajustement de la taille du contenu */
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-card {
+    img {
+      height: 120px; /* Hauteur plus réduite pour les mobiles */
+    }
+
+    .portfolio-card-body {
+      padding: 8px;
+
+      h4 {
+        font-size: 1rem; /* Taille de la police réduite pour les mobiles */
+      }
+
+      .portfolio-card-date {
+        font-size: 0.8rem; /* Taille réduite pour la date */
+      }
+
+      p {
+        font-size: 0.8rem; /* Taille de la police ajustée pour les mobiles */
+        line-height: 1.4; /* Ajustement du line-height */
+      }
+    }
+  }
+}

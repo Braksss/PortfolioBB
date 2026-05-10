@@ -24,9 +24,21 @@ if ($request === null) {
     exit;
 }
 
-$name = $request['firstName'] . ' ' . $request['lastName']; // Utilise les champs firstName et lastName
+// Vérification des champs requis
+if (empty($request['firstName']) || empty($request['lastName']) || empty($request['email']) || empty($request['profession']) || empty($request['message'])) {
+    echo json_encode(['status' => 'error', 'message' => 'Tous les champs sont obligatoires.']);
+    exit;
+}
+
+// Validation de l'email
+if (!filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
+    echo json_encode(['status' => 'error', 'message' => 'Adresse email invalide.']);
+    exit;
+}
+
+$name = $request['firstName'] . ' ' . $request['lastName'];
 $email = $request['email'];
-$subject = $request['profession']; // Tu peux remplacer ça par un sujet spécifique si besoin
+$subject = $request['profession'];
 $message = $request['message'];
 
 // Adresse email du destinataire
@@ -42,10 +54,8 @@ $headers .= "Reply-To: $email\r\n";
 
 // Envoi de l'email
 if (mail($to, $subject, $body, $headers)) {
-    // Envoi réussi
     echo json_encode(['status' => 'success', 'message' => 'Email envoyé avec succès.']);
 } else {
-    // Envoi échoué
     echo json_encode(['status' => 'error', 'message' => 'Échec de l\'envoi de l\'email.']);
 }
 ?>

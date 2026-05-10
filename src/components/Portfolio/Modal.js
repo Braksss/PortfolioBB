@@ -24,15 +24,17 @@ const Modal = ({ project, onClose, projectData, selectProject }) => {
 
           {/* Carousel des projets en bas */}
           <div className="modal__carousel">
-            {projectData && projectData.length > 0 && projectData.map((p, index) => (
-              <div 
-                key={index} 
-                className={`modal__carousel-item ${p.title === project.title ? 'active' : ''}`}
-                onClick={() => selectProject(index)}
-              >
-                <img src={p.img} alt={p.title} className="modal__carousel-image" />
-              </div>
-            ))}
+            {projectData &&
+              projectData.length > 0 &&
+              projectData.map((p, index) => (
+                <div
+                  key={index}
+                  className={`modal__carousel-item ${p.title === project.title ? 'active' : ''}`}
+                  onClick={() => selectProject(index)}
+                >
+                  <img src={p.img} alt={p.title} className="modal__carousel-image" />
+                </div>
+              ))}
           </div>
         </div>
 
@@ -60,10 +62,20 @@ const Modal = ({ project, onClose, projectData, selectProject }) => {
             </>
           )}
 
-          {project.projectLink && (
-            <a href={project.projectLink} target="_blank" rel="noopener noreferrer" className="modal__link">
+          {/* Vérification de la présence d'un lien */}
+          {project.projectLink ? (
+            <a
+              href={project.projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="modal__link"
+            >
               Voir le projet
             </a>
+          ) : (
+            <div className="modal__no-link">
+              Ce projet n'est pas accessible publiquement.
+            </div>
           )}
         </div>
       </div>

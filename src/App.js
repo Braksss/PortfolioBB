@@ -46,9 +46,7 @@ function App() {
 
   return (
     <>
-      {isMobile ? (
-        <UnderDevelopment /> // Si c'est un mobile, afficher la page en développement
-      ) : (
+      
         <>
           <NavBar />
           <Routes>
@@ -62,7 +60,7 @@ function App() {
           </Routes>
           <Footer />
         </>
-      )}
+
     </>
   );
 }

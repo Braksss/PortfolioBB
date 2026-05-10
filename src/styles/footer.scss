@@ -5,62 +5,61 @@
   font-family: 'Montserrat', sans-serif;
   text-align: center;
 
-  &__top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  &__logoContainer {
     margin-bottom: 10px;
+  }
 
-    .footer__logo {
-      max-width: 120px;
-      margin-bottom: 20px;
-    }
-
-    .footer__links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 20px;
-
-      li {
-        display: inline;
-
-        a {
-          color: #333;
-          text-decoration: none;
-          font-size: 16px;
-
-          &:hover {
-            color: #ff8200;
-          }
-        }
-      }
-    }
+  &__logo {
+    max-width: 100px;
   }
 
   &__quote {
     font-size: 16px;
     color: #666;
-    margin: 20px 0;
+    margin: 10px 0;
     font-style: italic;
   }
 
   &__bottom {
-    margin-top: 20px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+}
 
-    p {
+/* Media Queries */
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px 0;
+
+    &__logo {
+      max-width: 80px;
+    }
+
+    &__quote {
       font-size: 14px;
-      color: #666;
+    }
 
-      a {
-        color: #333;
-        text-decoration: none;
+    &__bottom {
+      font-size: 12px;
+    }
+  }
+}
 
-        &:hover {
-          color: #ff8200;
-        }
-      }
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px 0;
+
+    &__logo {
+      max-width: 60px;
+    }
+
+    &__quote {
+      font-size: 12px;
+    }
+
+    &__bottom {
+      font-size: 10px;
     }
   }
 }

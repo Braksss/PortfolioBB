@@ -43,3 +43,46 @@
       }
     }
   }
+
+  /* Media Queries */
+@media (max-width: 768px) {
+  .blog-card {
+    margin: 10px;
+    
+    &__content {
+      h3 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-card {
+    margin: 5px;
+
+    &__content {
+      padding: 15px;
+
+      h3 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      span {
+        font-size: 10px;
+      }
+    }
+  }
+}

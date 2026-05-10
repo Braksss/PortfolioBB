@@ -1,23 +1,55 @@
 .blog-container {
-    padding: 20px;
-    text-align: center;
-  
+  padding: 20px;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 50px;
+  }
+
+  .blog-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes sur les grands écrans */
+    grid-gap: 20px;
+    margin-top: 20px;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .blog-container {
     h1 {
-      margin-bottom: 20px;
-      color: #000000;
-      font-size: 50px;
+      font-size: 40px; /* Réduit la taille de la police du titre */
     }
-  
     .blog-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* Trois colonnes sur les grands écrans */
-      grid-gap: 20px;
-      margin-top: 20px;
+      grid-template-columns: repeat(2, 1fr); /* Deux colonnes sur les écrans moyens */
+      grid-gap: 15px; /* Espacement réduit */
     }
   }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
+  .blog-container {
+    h1 {
+      font-size: 32px; /* Taille de la police réduite pour les tablettes */
+    }
+    .blog-cards {
+      grid-template-columns: 1fr; /* Une seule colonne sur tablette */
+      grid-gap: 15px; /* Ajustement de l'espacement */
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-container {
+    padding: 10px;
+    h1 {
+      font-size: 28px; /* Taille de la police réduite pour les petits écrans */
+    }
     .blog-cards {
       grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+      grid-gap: 10px; /* Espacement réduit pour les petits écrans */
     }
   }
+}

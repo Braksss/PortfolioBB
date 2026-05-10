@@ -1,12 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom'; // Ajout de useLocation pour obtenir la page actuelle
 import '../styles/navbar.scss';
 import logo from '../components/Images/logo-nxb.png'; 
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showNav, setShowNav] = useState(true);
   const navigate = useNavigate();
   const location = useLocation(); // Obtenez la page actuelle
+  let lastScrollY = window.pageYOffset;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > lastScrollY) {
+        setShowNav(false); // Cacher la navbar quand on défile vers le bas
+      } else {
+        setShowNav(true); // Montrer la navbar quand on défile vers le haut
+      }
+      lastScrollY = window.pageYOffset;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -22,42 +38,35 @@ function NavBar() {
 
   // Fonction pour gérer la navigation et le défilement
   const handleNavigation = (sectionId) => {
-    // Si on est sur la page d'accueil
     if (location.pathname === '/') {
       scrollToSection(sectionId);
     } else {
-      // Rediriger vers la page d'accueil, puis faire défiler vers la section
       navigate('/');
       setTimeout(() => {
         scrollToSection(sectionId);
-      }, 100); // Petit délai pour que la page d'accueil se charge avant de faire défiler
+      }, 100);
     }
   };
 
   return (
-    <div className="navbar minimalist">
-      {/* Logo */}
+    <div className={`navbar minimalist ${showNav ? '' : 'hidden'}`}>
       <Link to="/" className="navbar__logo">
         <img src={logo} alt="Nexabridge Logo" />
       </Link>
 
-      {/* Menu burger pour mobile */}
-      <div className={`navbar__hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
+      {/* Menu de navigation qui se déploie en liste simple pour les petites tailles d'écran */}
+      <button className="navbar__menu-button" onClick={toggleMenu}>
+        {isOpen ? 'Fermer' : 'Menu'}
+      </button>
 
-      {/* Liste des liens */}
       <div className={`navbar__list ${isOpen ? 'open' : ''}`}>
         <ul>
-          <li onClick={() => handleNavigation('home')}>Accueil</li> {/* Fait défiler vers la section Home */}
-          <li onClick={() => navigate('/nexabridge')}>À Propos</li> {/* Redirige vers la page Nexabridge */}
-          <li onClick={() => navigate('/portfolio')}>Portfolio</li> {/* Redirige vers la nouvelle page Portfolio */}
+          <li onClick={() => handleNavigation('home')}>Accueil</li>
+          <li onClick={() => navigate('/nexabridge')}>À Propos</li>
+          <li onClick={() => navigate('/portfolio')}>Portfolio</li>
         </ul>
       </div>
 
-      {/* CTA minimaliste */}
       <div className="navbar__cta">
         <button onClick={() => handleNavigation('contact')} className="navbar__cta-button">Proposez un projet</button>
       </div>

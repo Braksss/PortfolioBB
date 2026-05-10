@@ -1,15 +1,16 @@
 import React from 'react';
-import logo from '../components/Images/logo-nxb.png'; // Assure-toi que le chemin est correct
 import '../styles/loader.scss'; // Assure-toi d'ajouter le style CSS correspondant
 
 const Loader = () => {
   return (
     <div className="loader">
-      <img src={logo} alt="Nexabridge Logo" className="loader__logo" />
+      {/* Loader subtil */}
+      <div className="loader__spinner"></div>
+
+      {/* Nom et rôle */}
       <div className="loader__text">
-        {Array.from("BENJAMIN").map((letter, index) => (
-          <span key={index} className="loader__letter">{letter}</span>
-        ))}
+        <h1 className="loader__name">Benjamin Brassart</h1>
+        <h2 className="loader__role">Développeur Freelance</h2>
       </div>
     </div>
   );

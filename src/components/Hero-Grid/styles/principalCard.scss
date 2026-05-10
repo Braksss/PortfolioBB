@@ -76,3 +76,14 @@
   }
 }
 
+
+
+@media (max-width: 768px) {
+  .first-card {
+    max-height: 400px;
+  }
+
+  .first-card__button {
+    display: none; // Masque le CTA sur mobile
+  }
+}

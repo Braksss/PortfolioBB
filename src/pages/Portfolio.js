@@ -4,114 +4,123 @@ import PortfolioCard from '../components/Portfolio/PortfolioCard';
 import Modal from '../components/Portfolio/Modal';
 import '../styles/portfolio.scss';
 
-import PortfolioImg1 from '../components/Images/startup-interactive.png';
-import PortfolioImg2 from '../components/Images/mobilefit-tracker.png';
-import PortfolioImg3 from '../components/Images/ecommerce-accelrator.jpg';
-import PortfolioImg4 from '../components/Images/seo-boost-pro.png';
-import PortfolioImg5 from '../components/Images/wellness-app.png';
+import Nexabridge from '../components/Images/nexabridge.png';
+import Axis from '../components/Images/Axis.png';
+import Ever from '../components/Images/ever.png';
+import Booki from '../components/Images/booki.png';
+import LaBelleEpoque from '../components/Images/La-Belle-Epoque.png';
+import Qwenta from '../components/Images/Qwenta.png';
+import Carducci from '../components/Images/Carducci.png';
+import Kasa from '../components/Images/Kasa.png';
+import SB from '../components/Images/SB.png';
+import Grimoire from '../components/Images/Grimoire.png';
+import DefaultImage from '../components/Images/bg-project.png'; // Image par défaut
+
+
 
 const projectData = [
   { 
-    title: "Startup Interactive",
-    category: "Développement Web",
-    date: new Date("2023-02-28"), 
-    img: PortfolioImg1, 
-    content: "Conception d'un site interactif pour une startup, avec une expérience utilisateur fluide et moderne. Intégration d'un back-end sur Node.js pour la gestion des utilisateurs et des bases de données.",
-    technologies: ["React", "Node.js", "MongoDB", "AWS"],
-    tags: ["UX/UI", "Startup", "Responsive"],
-    projectLink: "https://www.startupinteractive.com"
-  },
-  { 
-    title: "MobileFit Tracker",
-    category: "Mobile",
-    date: new Date("2023-02-28"), 
-    img: PortfolioImg2, 
-    content: "Application mobile de suivi des performances de fitness avec analyse en temps réel et synchronisation avec les montres connectées. Disponible sur iOS et Android.",
-    technologies: ["React Native", "Firebase", "Google Fit API"],
-    tags: ["Fitness", "iOS", "Android"],
-    projectLink: "https://www.mobilefittracker.com"
-  },
-  { 
-    title: "E-Commerce Accelerator",
-    category: "Développement Web",
-    date: new Date("2023-05-12"), 
-    img: PortfolioImg3, 
-    content: "Développement d'une plateforme e-commerce optimisée pour les ventes en ligne. Amélioration des performances du site et intégration de passerelles de paiement sécurisées.",
-    technologies: ["Vue.js", "Node.js", "Stripe", "Firebase"],
-    tags: ["E-Commerce", "Performance", "Responsive"],
-    projectLink: "https://www.ecommerceaccelerator.com"
-  },
-  { 
-    title: "SEO Boost Pro",
-    category: "SEO",
-    date: new Date("2022-07-05"), 
-    img: PortfolioImg4, 
-    content: "Optimisation du référencement naturel pour un site e-commerce. Création d'une stratégie SEO complète, avec des résultats mesurables en termes d'augmentation du trafic organique.",
-    technologies: ["SEO", "Google Analytics", "WordPress"],
-    tags: ["SEO", "E-Commerce", "Analytics"],
-    projectLink: "https://www.seoboostpro.com"
-  },
-  { 
-    title: "Wellness App",
-    category: "Mobile",
-    date: new Date("2023-03-10"), 
-    img: PortfolioImg5, 
-    content: "Développement d'une application de bien-être et de suivi personnel. L'application permet de gérer des routines quotidiennes, avec des intégrations à des services de fitness et des notifications personnalisées.",
-    technologies: ["React Native", "Node.js", "GraphQL"],
-    tags: ["Bien-être", "Mobile", "Notifications"],
-    projectLink: "https://www.wellnessapp.com"
-  },
-  { 
-    title: "Smart Home Controller",
-    category: "Développement Web",
-    date: new Date("2023-08-01"), 
-    img: 'path/to/image6.png', 
-    content: "Création d'une interface de gestion pour maison connectée, permettant de contrôler à distance divers appareils (éclairage, sécurité, etc.). Utilisation de protocoles IoT pour assurer une gestion fluide et sécurisée.",
-    technologies: ["React", "Node.js", "MQTT", "Raspberry Pi"],
-    tags: ["IoT", "Domotique", "Smart Home"],
-    projectLink: "https://www.smarthomecontroller.com"
-  },
-  { 
-    title: "EduLearn Platform",
-    category: "Développement Web",
-    date: new Date("2022-11-15"), 
-    img: 'path/to/image7.png', 
-    content: "Plateforme d'apprentissage en ligne interactive pour les étudiants. Intégration de vidéos, quiz et rapports d'apprentissage détaillés. Sécurisation des données utilisateurs et gestion de l'accès aux contenus.",
-    technologies: ["Angular", "Node.js", "MongoDB", "AWS"],
-    tags: ["E-Learning", "Sécurité", "Vidéo"],
-    projectLink: "https://www.edulearnplatform.com"
-  },
-  { 
-    title: "Travel Buddy",
-    category: "Mobile",
-    date: new Date("2023-09-25"), 
-    img: 'path/to/image8.png', 
-    content: "Application de voyage offrant des recommandations personnalisées basées sur les préférences de l'utilisateur. Suivi en temps réel des vols et alertes sur les destinations.",
-    technologies: ["Flutter", "Firebase", "Google Maps API"],
-    tags: ["Voyage", "Recommandation", "Notifications"],
-    projectLink: "https://www.travelbuddy.com"
-  },
-  { 
-    title: "AI Article Generator",
+    title: "Nexabridge",
     category: "Développement Web",
     date: new Date("2024-01-05"), 
-    img: 'path/to/image9.png', 
-    content: "Système basé sur l'IA pour la génération automatique d'articles. Utilisation du traitement du langage naturel pour générer du contenu cohérent et optimisé pour le SEO.",
-    technologies: ["Python", "TensorFlow", "NLP"],
-    tags: ["IA", "NLP", "SEO"],
-    projectLink: "https://www.aiarticlegenerator.com"
+    img: Nexabridge, 
+    content: "Développement du site web pour Nexabridge, une société holding spécialisée dans l'accompagnement d'entrepreneurs. Ce projet a consisté à créer une vitrine moderne et responsive en HTML, optimisée pour présenter les services et activités de la holding, tout en assurant une navigation fluide et une excellente compatibilité mobile.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    tags: ["Vitrine", "Holding", "Responsive"],
+    projectLink: "https://nxbtech.github.io/nexabridge-hld/"
   },
   { 
-    title: "Crypto Portfolio Manager",
+    title: "Axis",
     category: "Développement Web",
-    date: new Date("2023-06-20"), 
-    img: 'path/to/image10.png', 
-    content: "Développement d'une plateforme de gestion de portefeuilles cryptographiques, avec des outils d'analyse de données en temps réel et des recommandations basées sur l'historique de l'utilisateur.",
-    technologies: ["React", "Node.js", "Blockchain", "CoinAPI"],
-    tags: ["Crypto", "Finance", "Blockchain"],
-    projectLink: "https://www.cryptomanager.com"
-  }
+    date: new Date("2024-02-10"), 
+    img: Axis, 
+    content: "Développement du site web pour Axis, une agence digitale spécialisée dans le sport. Le site présente les services de l'agence, ses études de cas, et offre une interface intuitive avec un design axé sur l'expérience utilisateur, entièrement conçu en HTML et CSS pour un rendu performant.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    tags: ["Sport", "Agence Digitale", "UX/UI"],
+    projectLink: "https://nxbtech.github.io/AXIS/"
+  },
+  { 
+    title: "Ever",
+    category: "Développement Web",
+    date: new Date("2024-03-15"), 
+    img: Ever, 
+    content: "Création d'un site web pour Ever, une agence de voyage et de publicité d'influence basée à Platja d'Aro. Ce projet a permis de mettre en avant l'offre touristique et les services de l'agence à travers un site moderne, responsive, avec une présentation visuelle engageante.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    tags: ["Agence de Voyage", "Publicité", "Design Moderne"],
+    projectLink: "https://platjadaro.fr"
+  },
+  { 
+    title: "Booki",
+    category: "Développement Web",
+    date: new Date("2024-04-20"), 
+    img: Booki, 
+    content: "Développement d'un site web de réservation d'hébergement pour la ville de Marseille. Ce projet a été conçu en HTML et CSS, avec un accent sur l'accessibilité et l'optimisation SEO pour améliorer la visibilité du site dans les moteurs de recherche.",
+    technologies: ["HTML", "CSS", "SEO"],
+    tags: ["Hébergement", "Marseille", "SEO"],
+    projectLink: "https://nxbtech.github.io/booki-starter-code/"
+  },
+  { 
+    title: "Kasa",
+    category: "Développement Web",
+    date: new Date("2024-05-30"), 
+    img: Kasa, 
+    content: "Développement d'une plateforme complète pour la gestion de locations de courte durée, intégrée avec des fonctionnalités de paiement sécurisé et de réservation en temps réel. Le projet utilise React pour un front-end interactif et Firebase pour la gestion des données.",
+    technologies: ["React", "Firebase", "Node.js"],
+    tags: ["Location", "Paiements", "Sécurité"],
+    projectLink: ""
+  },
+  { 
+    title: "Mon vieux grimoire",
+    category: "Développement Web",
+    date: new Date("2024-06-25"), 
+    img: Grimoire, 
+    content: "Développement d'une plateforme de gestion et de partage de fiches de lecture sur des livres anciens et contemporains. Ce projet a utilisé React pour le front-end et Node.js pour le back-end, permettant aux utilisateurs de créer, modifier et consulter des fiches détaillées.",
+    technologies: ["React", "Node.js", "MongoDB"],
+    tags: ["Livres", "Base de Données", "CRUD"],
+    projectLink: ""
+  },
+  { 
+    title: "Nina Carducci",
+    category: "SEO & Maintenance",
+    date: new Date("2024-07-15"), 
+    img: Carducci, 
+    content: "Travail de SEO et maintenance pour le site web d'une photographe freelance. Le projet visait à améliorer la visibilité du site dans les résultats de recherche Google tout en maintenant des performances optimales grâce à des optimisations régulières.",
+    technologies: ["SEO", "WordPress", "Maintenance"],
+    tags: ["Photographie", "SEO", "Maintenance"],
+    projectLink: ""
+  },
+  { 
+    title: "Sophie Bluel",
+    category: "Développement Web",
+    date: new Date("2024-08-01"), 
+    img: SB, 
+    content: "Création d'un portfolio interactif pour une photographe professionnelle. Le site, développé en JavaScript avec un back-end en Node.js, permet à l'artiste de présenter son travail avec des galeries dynamiques et une interface simple à mettre à jour.",
+    technologies: ["JavaScript", "Node.js", "React"],
+    tags: ["Photographie", "Portfolio", "Backend"],
+    projectLink: ""
+  },
+  { 
+    title: "Qwenta - Menu Maker",
+    category: "Gestion de Projet",
+    date: new Date("2024-09-15"), 
+    img: Qwenta, 
+    content: "Gestion de projet pour le développement d'une solution SaaS permettant aux restaurateurs de créer des menus en ligne personnalisés. Supervision des équipes techniques et collaboration étroite avec les parties prenantes pour garantir une livraison conforme aux attentes des utilisateurs finaux.",
+    technologies: ["Gestion de Projet", "SaaS", "API", "Cloud"],
+    tags: ["SaaS", "Gestion de Projet", "Restauration"],
+    projectLink: ""
+  },
+  {
+    title: "La Belle Époque",
+    category: "Développement Web",
+    date: new Date("2024-10-05"), 
+    img: LaBelleEpoque, 
+    content: "Développement d'un site web moderne et responsive pour l'hôtel La Belle Époque situé à Toulouse. Le site inclut une plateforme de réservation en ligne intuitive permettant aux clients de vérifier les disponibilités, choisir leurs chambres et effectuer des paiements sécurisés. Design élégant et expérience utilisateur optimisée pour refléter l'image haut de gamme de l'établissement.",
+    technologies: ["HTML", "CSS", "JavaScript", "Plateforme de réservation"],
+    tags: ["Hôtellerie", "Toulouse", "Responsive Design", "Réservation en ligne"],
+    projectLink: null // Pas de lien public
+  },
 ];
+
 
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -135,6 +144,11 @@ const Portfolio = () => {
     setSelectedProjectIndex(index);
   };
 
+  // Limiter l'affichage du contenu sur les cartes à 100 caractères
+  const getShortContent = (content) => {
+    return content.length > 100 ? `${content.substring(0, 100)}...` : content;
+  };
+
   const filteredProjects = projectData
     .filter(project => selectedCategory === 'all' || project.category === selectedCategory);
 
@@ -151,8 +165,8 @@ const Portfolio = () => {
           <PortfolioCard
             key={index}
             title={project.title}
-            content={project.content}
-            img={project.img}
+            content={getShortContent(project.content)}  // Limiter l'affichage du contenu
+            img={project.img || DefaultImage}  // Afficher l'image par défaut si aucune n'est fournie
             date={project.date}
             onClick={() => openModal(index)} // Ouverture de la modale au clic
           />
@@ -163,8 +177,8 @@ const Portfolio = () => {
         <Modal
           project={projectData[selectedProjectIndex]}
           onClose={closeModal}
-          projectData={projectData} // Pass projectData for the carousel
-          selectProject={selectProject} // Function to navigate through projects
+          projectData={projectData} // Pass projectData fpour le carousel
+          selectProject={selectProject} // fonction pour naviguer a travers les projets
         />
       )}
     </div>

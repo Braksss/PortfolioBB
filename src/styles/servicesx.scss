@@ -38,33 +38,60 @@
 
 /* Version mobile */
 @media (max-width: 768px) {
-  .combinedComponent {
-      grid-template-columns: 1fr; /* Passe à une seule colonne */
-      grid-template-rows: auto; /* Les lignes prennent la taille de leur contenu */
-      gap: 15px; /* Réduit l'espace entre les éléments */
-      
-      &__content {
-          grid-column: 1; /* Prend toute la largeur */
-          grid-row: auto; /* Ajuste la taille au contenu */
-      }
-
-      &__serviceImg {
-          grid-column: 1; /* Prend toute la largeur */
-          grid-row: auto; /* Ajuste la taille au contenu */
-          margin-top: 15px; /* Ajuste l'espacement */
-      }
-
-      &__mainCard {
-          grid-column: 1; /* Prend toute la largeur */
-          grid-row: auto; /* Ajuste la taille au contenu */
-      }
-
-      &__secondCard {
-          grid-column: 1; /* Prend toute la largeur */
-          grid-row: auto; /* Ajuste la taille au contenu */
-          &--orange, &--violet {
-              grid-column: 1; /* Prend toute la largeur */
-          }
-      }
+    .combinedComponent {
+        display: none; /* Cache complètement le composant en version mobile */
+    }
   }
-}
+  
+  /* Version tablette */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .combinedComponent {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+  
+        &__content {
+            grid-column: 1 / -1;
+            grid-row: auto;
+        }
+  
+        &__serviceImg {
+            grid-column: 3 / -1;
+            grid-row: auto;
+        }
+  
+        &__mainCard {
+            grid-column: 1 / -1;
+            grid-row: auto;
+        }
+  
+        &__secondCard {
+            grid-row: auto;
+            &--orange {
+                grid-column: 1 / 5;
+            }
+  
+            &--violet {
+                grid-column: 5 / -1;
+            }
+        }
+    }
+  }
+  
+
+
+/* En dessous de 1100px : cacher l'image et le contenu */
+/* En dessous de 1100px : cacher uniquement le contenu */
+@media (max-width: 1100px) {
+    .combinedComponent__content .content,
+    .combinedComponent__serviceImg {
+      display: none; /* Masque uniquement le contenu et l'image */
+    }
+  }
+  
+  /* En dessous de 1000px : cacher complètement le composant */
+  @media (max-width: 1000px) {
+    .combinedComponent {
+      display: none; /* Supprime le composant entier */
+    }
+  }
